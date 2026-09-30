@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane
+    maxHeight="-Infinity"
+    maxWidth="-Infinity"
+    minHeight="-Infinity"
+    minWidth="-Infinity"
+    prefHeight="500.0"
+    prefWidth="800.0"
+    tabClosingPolicy="UNAVAILABLE"
+    xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="com.library.controllers.MainController">
+
+    <tabs>
+
+        <Tab text="Номын бүртгэл">
+            <content>
+
+                <AnchorPane
+                    minHeight="0.0"
+                    minWidth="0.0"
+                    prefHeight="180.0"
+                    prefWidth="200.0">
+
+                    <children>
+
+                        <SplitPane
+                            dividerPositions="0.28"
+                            layoutX="-1.0"
+                            layoutY="-1.0"
+                            prefHeight="468.0"
+                            prefWidth="800.0">
+
+                            <items>
+
+                                <!-- Зүүн тал -->
+                                <AnchorPane
+                                    minHeight="0.0"
+                                    minWidth="0.0"
+                                    prefHeight="458.0"
+                                    prefWidth="331.0">
+
+                                    <children>
+
+                                        <VBox
+                                            layoutX="-1.0"
+                                            prefHeight="462.0"
+                                            prefWidth="223.0"
+                                            spacing="10.0">
+
+                                            <padding>
+                                                <Insets
+                                                    bottom="15.0"
+                                                    left="15.0"
+                                                    right="15.0"
+                                                    top="15.0"/>
+                                            </padding>
+
+                                            <children>
+
+                                                <Text
+                                                    strokeType="OUTSIDE"
+                                                    strokeWidth="0.0"
+                                                    text="Номын бүртгэл"
+                                                    wrappingWidth="146.0">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="18.0"/>
+                                                    </font>
+
+                                                    <VBox.margin>
+                                                        <Insets
+                                                            bottom="5.0"
+                                                            left="20.0"/>
+                                                    </VBox.margin>
+
+                                                </Text>
+
+                                                <Text
+                                                    strokeType="OUTSIDE"
+                                                    strokeWidth="0.0"
+                                                    text="Номын нэр"/>
+
+                                                <TextField fx:id="txtBookname"/>
+
+                                                <Text
+                                                    strokeType="OUTSIDE"
+                                                    strokeWidth="0.0"
+                                                    text="Зохиогч"/>
+
+                                                <TextField fx:id="txtAutor"/>
+
+                                                <Text
+                                                    strokeType="OUTSIDE"
+                                                    strokeWidth="0.0"
+                                                    text="ISBN"/>
+
+                                                <TextField fx:id="txtisbn"/>
+
+                                                <Text
+                                                    strokeType="OUTSIDE"
+                                                    strokeWidth="0.0"
+                                                    text="Тоо"/>
+
+                                                <TextField fx:id="txtQuanity"/>
+
+                                                <Button
+                                                    fx:id="buttonAddBook"
+                                                    mnemonicParsing="false"
+                                                    onAction="#onAddBookclick"
+                                                    text="Нэмэх"/>
+
+                                            </children>
+
+                                        </VBox>
+
+                                    </children>
+
+                                </AnchorPane>
+
+
+                                <!-- Баруун тал -->
+                                <AnchorPane
+                                    minHeight="0.0"
+                                    minWidth="0.0"
+                                    prefHeight="458.0"
+                                    prefWidth="469.0">
+
+                                    <children>
+
+                                        <VBox
+                                            layoutX="-6.0"
+                                            layoutY="69.0"
+                                            prefHeight="401.0"
+                                            prefWidth="580.0"
+                                            spacing="10.0">
+
+                                            <children>
+
+                                                <TableView
+                                                    fx:id="tableBook"
+                                                    prefHeight="398.0"
+                                                    prefWidth="550.0"
+                                                    VBox.vgrow="ALWAYS">
+
+                                                    <columns>
+
+                                                        <TableColumn
+                                                            fx:id="colId"
+                                                            prefWidth="75.0"
+                                                            text="ID"/>
+
+                                                        <TableColumn
+                                                            fx:id="colTitle"
+                                                            prefWidth="120.0"
+                                                            text="Номын нэр"/>
+
+                                                        <TableColumn
+                                                            fx:id="colAuthor"
+                                                            prefWidth="100.0"
+                                                            text="Зохиогч"/>
+
+                                                        <TableColumn
+                                                            fx:id="colIsbn"
+                                                            prefWidth="100.0"
+                                                            text="ISBN"/>
+
+                                                        <TableColumn
+                                                            fx:id="colQuantity"
+                                                            prefWidth="80.0"
+                                                            text="Тоо"/>
+
+                                                        <TableColumn
+                                                            fx:id="colAv"
+                                                            prefWidth="100.0"
+                                                            text="Үлдэгдэл"/>
+
+                                                    </columns>
+
+                                                </TableView>
+
+                                            </children>
+
+                                        </VBox>
+
+
+                                        <!-- Хайлт -->
+                                        <HBox
+                                            layoutY="-7.0"
+                                            prefHeight="49.0"
+                                            prefWidth="570.0"
+                                            spacing="10.0">
+
+                                            <children>
+
+                                                <Text
+                                                    strokeType="OUTSIDE"
+                                                    strokeWidth="0.0"
+                                                    text="Хайх:"
+                                                    wrappingWidth="38.0">
+
+                                                    <HBox.margin>
+                                                        <Insets
+                                                            left="10.0"
+                                                            top="10.0"/>
+                                                    </HBox.margin>
+
+                                                </Text>
+
+                                                <TextField
+                                                    fx:id="txtBookSearch"
+                                                    prefHeight="26.0"
+                                                    prefWidth="389.0">
+
+                                                    <HBox.margin>
+                                                        <Insets top="10.0"/>
+                                                    </HBox.margin>
+
+                                                </TextField>
+
+                                            </children>
+
+                                        </HBox>
+
+                                    </children>
+
+                                </AnchorPane>
+
+                            </items>
+
+                        </SplitPane>
+
+                    </children>
+
+                </AnchorPane>
+
+            </content>
+        </Tab>
+
+
+        <Tab text="уншигч">
+            <content>
+                <AnchorPane
+                    minHeight="0.0"
+                    minWidth="0.0"
+                    prefHeight="180.0"
+                    prefWidth="200.0"/>
+            </content>
+        </Tab>
+
+
+        <Tab text="түрээс">
+            <content>
+                <AnchorPane
+                    minHeight="0.0"
+                    minWidth="0.0"
+                    prefHeight="180.0"
+                    prefWidth="200.0"/>
+            </content>
+        </Tab>
+
+    </tabs>
+
+</TabPane>
