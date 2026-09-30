@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane xmlns="http://javafx.com/javafx/21"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="com.library.controllers.MainController">
+
+    <tabs>
+
+        <Tab text="Номын бүртгэл"
+             closable="false">
+
+            <content>
+
+                <AnchorPane>
+
+                    <Label layoutX="25.0"
+                           layoutY="25.0"
+                           text="Номын нэр:" />
+
+                    <TextField fx:id="txtBookname"
+                               layoutX="120.0"
+                               layoutY="20.0"
+                               prefWidth="220.0" />
+
+                    <Label layoutX="25.0"
+                           layoutY="70.0"
+                           text="Зохиогч:" />
+
+                    <TextField fx:id="txtAutor"
+                               layoutX="120.0"
+                               layoutY="65.0"
+                               prefWidth="220.0" />
+
+                    <Label layoutX="25.0"
+                           layoutY="115.0"
+                           text="ISBN:" />
+
+                    <TextField fx:id="txtisbn"
+                               layoutX="120.0"
+                               layoutY="110.0"
+                               prefWidth="220.0" />
+
+                    <Label layoutX="25.0"
+                           layoutY="160.0"
+                           text="Тоо:" />
+
+                    <TextField fx:id="txtQuanity"
+                               layoutX="120.0"
+                               layoutY="155.0"
+                               prefWidth="220.0" />
+
+                    <Button fx:id="buttonAddBook"
+                            layoutX="120.0"
+                            layoutY="205.0"
+                            mnemonicParsing="false"
+                            onAction="#onAddBookclick"
+                            text="Ном нэмэх" />
+
+                    <Label layoutX="380.0"
+                           layoutY="25.0"
+                           text="Ном хайх:" />
+
+                    <TextField fx:id="txtBookSearch"
+                               layoutX="450.0"
+                               layoutY="20.0"
+                               prefWidth="250.0"
+                               promptText="Ном, зохиогч, ISBN..." />
+
+                    <TableView fx:id="tableBook"
+                               layoutX="25.0"
+                               layoutY="260.0"
+                               prefHeight="350.0"
+                               prefWidth="675.0">
+
+                        <columns>
+
+                            <TableColumn fx:id="colId"
+                                         prefWidth="70.0"
+                                         text="ID" />
+
+                            <TableColumn fx:id="colTitle"
+                                         prefWidth="150.0"
+                                         text="Номын нэр" />
+
+                            <TableColumn fx:id="colAuthor"
+                                         prefWidth="120.0"
+                                         text="Зохиогч" />
+
+                            <TableColumn fx:id="colIsbn"
+                                         prefWidth="120.0"
+                                         text="ISBN" />
+
+                            <TableColumn fx:id="colQuantity"
+                                         prefWidth="90.0"
+                                         text="Тоо" />
+
+                            <TableColumn fx:id="colAv"
+                                         prefWidth="100.0"
+                                         text="Үлдэгдэл" />
+
+                        </columns>
+
+                    </TableView>
+
+                </AnchorPane>
+
+            </content>
+
+        </Tab>
+
+        <Tab text="Уншигч"
+            closable="false">
+
+            <content>
+
+                <AnchorPane>
+
+                    <Label layoutX="30.0"
+                           layoutY="30.0"
+                           text="Уншигчийн бүртгэл" />
+
+                    <Label layoutX="30.0"
+                           layoutY="80.0"
+                           text="Овог:" />
+
+                    <TextField fx:id="txtMemberSurname"
+                               layoutX="140.0"
+                               layoutY="75.0"
+                               prefWidth="250.0" />
+
+                    <Label layoutX="30.0"
+                           layoutY="125.0"
+                           text="Нэр:" />
+
+                    <TextField fx:id="txtMemberName"
+                               layoutX="140.0"
+                               layoutY="120.0"
+                               prefWidth="250.0" />
+
+                    <Label layoutX="30.0"
+                           layoutY="170.0"
+                           text="Утас:" />
+
+                    <TextField fx:id="txtMemberPhone"
+                               layoutX="140.0"
+                               layoutY="165.0"
+                               prefWidth="250.0" />
+
+                    <Label layoutX="30.0"
+                           layoutY="215.0"
+                           text="Email:" />
+
+                    <TextField fx:id="txtMemberEmail"
+                               layoutX="140.0"
+                               layoutY="210.0"
+                               prefWidth="250.0" />
+
+                    <Button layoutX="140.0"
+                            layoutY="260.0"
+                            mnemonicParsing="false"
+                            onAction="#onAddMemberClick"
+                            text="Уншигч нэмэх" />
+
+                </AnchorPane>
+
+            </content>
+
+        </Tab>
+
+        <Tab text="Түрээс"
+            closable="false">
+
+            <content>
+
+                <AnchorPane>
+
+                    <Label layoutX="25.0"
+                           layoutY="20.0"
+                           text="Номын түрээс" />
+
+                    <Button layoutX="25.0"
+                            layoutY="60.0"
+                            mnemonicParsing="false"
+                            onAction="#onBorrowBookClick"
+                            text="Ном түрээслэх" />
+
+                    <Button layoutX="160.0"
+                            layoutY="60.0"
+                            mnemonicParsing="false"
+                            onAction="#onReturnBookClick"
+                            text="Ном буцаах" />
+
+                    <Label layoutX="25.0"
+                           layoutY="115.0"
+                           text="Шүүлтүүр:" />
+
+                    <RadioButton fx:id="radioAll"
+                                 layoutX="100.0"
+                                 layoutY="112.0"
+                                 mnemonicParsing="false"
+                                 selected="true"
+                                 text="Бүгд">
+
+                        <toggleGroup>
+                            <ToggleGroup fx:id="rentalFilterGroup" />
+                        </toggleGroup>
+
+                    </RadioButton>
+
+                    <RadioButton fx:id="radioOverdue"
+                                 layoutX="170.0"
+                                 layoutY="112.0"
+                                 mnemonicParsing="false"
+                                 text="Хугацаа хэтэрсэн"
+                                 toggleGroup="$rentalFilterGroup" />
+
+                    <TableView fx:id="tableRental"
+                               layoutX="25.0"
+                               layoutY="160.0"
+                               prefHeight="400.0"
+                               prefWidth="675.0">
+
+                        <columns>
+
+                            <TableColumn fx:id="colRentalId"
+                                         prefWidth="70.0"
+                                         text="ID" />
+
+                            <TableColumn fx:id="colMemberName"
+                                         prefWidth="120.0"
+                                         text="Уншигч" />
+
+                            <TableColumn fx:id="colBookTitle"
+                                         prefWidth="130.0"
+                                         text="Ном" />
+
+                            <TableColumn fx:id="colBorrowDate"
+                                         prefWidth="100.0"
+                                         text="Авсан огноо" />
+
+                            <TableColumn fx:id="colDueDate"
+                                         prefWidth="100.0"
+                                         text="Буцаах огноо" />
+
+                            <TableColumn fx:id="colReturnDate"
+                                         prefWidth="100.0"
+                                         text="Буцаасан огноо" />
+
+                            <TableColumn fx:id="colStatus"
+                                         prefWidth="100.0"
+                                         text="Төлөв" />
+
+                        </columns>
+
+                    </TableView>
+
+                </AnchorPane>
+
+            </content>
+
+        </Tab>
+
+    </tabs>
+
+</TabPane>
