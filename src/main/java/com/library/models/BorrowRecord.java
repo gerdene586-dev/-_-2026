@@ -1,4 +1,4 @@
-package com.library.controllers;
+package com.library.models;
 
 public class BorrowRecord {
     
